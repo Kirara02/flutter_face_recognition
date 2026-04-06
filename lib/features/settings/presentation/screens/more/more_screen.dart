@@ -35,6 +35,18 @@ class MoreScreen extends ConsumerWidget {
       body: ListView(
         children: [
           ListTile(
+            title: Text(context.l10n.more.registerFace),
+            subtitle: Text(context.l10n.more.registerFaceSubtitle),
+            leading: const Icon(Icons.face, size: 24),
+            onTap: () => const FaceRegisterRoute().go(context),
+          ),
+          ListTile(
+            title: Text(context.l10n.more.verifyFace),
+            subtitle: Text(context.l10n.more.verifyFaceSubtitle),
+            leading: const Icon(Icons.verified_user, size: 24),
+            onTap: () => const FaceVerifyRoute().go(context),
+          ),
+          ListTile(
             title: Text(context.l10n.more.settings),
             subtitle: Text(context.l10n.more.settingsSubtitle),
             leading: const FaIcon(FontAwesomeIcons.gear, size: 20),

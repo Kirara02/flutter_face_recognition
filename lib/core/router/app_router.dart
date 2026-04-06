@@ -9,6 +9,7 @@ import '../../features/auth/presentation/screens/login/login_screen.dart';
 import '../../features/auth/presentation/providers/auth_provider.dart';
 import '../../features/settings/presentation/screens/about/about_screen.dart';
 import '../../features/settings/presentation/screens/settings/settings_screen.dart';
+import '../../features/face_recognition/presentation/screens/face_recognition_screen.dart';
 
 part 'app_router.g.dart';
 part 'sub_routes/auth_routes.dart';
@@ -89,6 +90,8 @@ GoRouter routerConfig(Ref ref) {
               routes: [
                 TypedGoRoute<AboutRoute>(path: Routes.about),
                 TypedGoRoute<SettingsRoute>(path: Routes.settings),
+                TypedGoRoute<FaceRegisterRoute>(path: 'face-register'),
+                TypedGoRoute<FaceVerifyRoute>(path: 'face-verify'),
               ],
             ),
           ],

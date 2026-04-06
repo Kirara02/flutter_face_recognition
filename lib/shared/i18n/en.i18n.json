@@ -16,6 +16,10 @@
   },
   "more": {
     "title": "More",
+    "registerFace": "Register Face",
+    "registerFaceSubtitle": "Add face recognition for faster login",
+    "verifyFace": "Verify Face",
+    "verifyFaceSubtitle": "Test your registered face",
     "settings": "Settings",
     "settingsSubtitle": "General and Appearance settings",
     "about": "About",
@@ -47,6 +51,18 @@
     "themeSystem": "System",
     "themeLight": "Light",
     "themeDark": "Dark"
+  },
+  "faceRecognition": {
+    "registerTitle": "Register Face",
+    "verifyTitle": "Verify Face",
+    "processing": "Processing...",
+    "instructionNoFace": "Center your face in the frame",
+    "instructionFaceDetected": "Face detected! Tap capture to proceed.",
+    "successRegister": "Registration Successful",
+    "successVerify": "Face Verified",
+    "goBack": "Go Back",
+    "errorNoFace": "No face detected",
+    "errorNotMatched": "Face not matched"
   },
   "common": {
     "appTitle": "Template App",

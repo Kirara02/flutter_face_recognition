@@ -16,6 +16,10 @@
   },
   "more": {
     "title": "Lainnya",
+    "registerFace": "Daftar Wajah",
+    "registerFaceSubtitle": "Tambahkan pengenalan wajah untuk login lebih cepat",
+    "verifyFace": "Verifikasi Wajah",
+    "verifyFaceSubtitle": "Uji wajah yang terdaftar",
     "settings": "Pengaturan",
     "settingsSubtitle": "Pengaturan Umum dan Tampilan",
     "about": "Tentang",
@@ -47,6 +51,18 @@
     "themeSystem": "Sistem",
     "themeLight": "Terang",
     "themeDark": "Gelap"
+  },
+  "faceRecognition": {
+    "registerTitle": "Daftar Wajah",
+    "verifyTitle": "Verifikasi Wajah",
+    "processing": "Memproses...",
+    "instructionNoFace": "Posisikan wajah Anda di tengah bingkai",
+    "instructionFaceDetected": "Wajah terdeteksi! Ketuk ambil untuk melanjutkan.",
+    "successRegister": "Pendaftaran Berhasil",
+    "successVerify": "Wajah Terverifikasi",
+    "goBack": "Kembali",
+    "errorNoFace": "Tidak ada wajah terdeteksi",
+    "errorNotMatched": "Wajah tidak cocok"
   },
   "common": {
     "appTitle": "Templat App",

@@ -28,3 +28,19 @@ class SettingsRoute extends GoRouteData with $SettingsRoute {
   Widget build(BuildContext context, GoRouterState state) =>
       const SettingsScreen();
 }
+
+class FaceRegisterRoute extends GoRouteData with $FaceRegisterRoute {
+  const FaceRegisterRoute();
+
+  @override
+  Widget build(BuildContext context, GoRouterState state) =>
+      const FaceRecognitionScreen(isRegistration: true);
+}
+
+class FaceVerifyRoute extends GoRouteData with $FaceVerifyRoute {
+  const FaceVerifyRoute();
+
+  @override
+  Widget build(BuildContext context, GoRouterState state) =>
+      const FaceRecognitionScreen(isRegistration: false);
+}
