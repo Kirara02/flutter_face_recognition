@@ -1,6 +1,6 @@
-# 🚀 Flutter Premium Base Template
+# 👤 Flutter Face Recognition
 
-A modern, high-fidelity, and production-ready Flutter starter template built on **Feature-First Domain-Driven Design (DDD)**. This template is designed for maximum developer productivity, type safety, and a premium user experience out of the box.
+A modern, high-fidelity Flutter application for secure **Face Registration and Verification**. This project leverages on-device AI for face detection and embedding extraction, while performing persistent **Face Data Matching on the Backend** for maximum security and scalability.
 
 ---
 
@@ -9,6 +9,7 @@ A modern, high-fidelity, and production-ready Flutter starter template built on 
 | Feature                | Detail                                                                                                           |
 | ---------------------- | ---------------------------------------------------------------------------------------------------------------- |
 | **Clean Architecture** | Feature-First DDD — strict separation of **Data / Domain / Presentation** layers.                                |
+| **Face Recognition**   | AI-powered face registration and verification using **Google ML Kit** and **TFLite (MobileFaceNet)**.           |
 | **Design System**      | Centralized design tokens for Colors, Spacing, Radius, Shadows, and Typography.                                  |
 | **Declarative UI**     | Fluent widget extensions (`.center`, `.padAll`, `.vSpace`) for a cleaner widget tree.                            |
 | **State Management**   | Riverpod 3.x with advanced code generation (`riverpod_generator`).                                               |
@@ -17,7 +18,6 @@ A modern, high-fidelity, and production-ready Flutter starter template built on 
 | **Networking**         | Dio with `AuthInterceptor` — seamless refresh token flow & 401 retries.                                          |
 | **I18n / L10n**        | Slang — compile-time safe translations with **EN** and **ID** support.                                           |
 | **Premium Theming**    | `FlexColorScheme` v8 + Google Fonts, including **System**, **Light**, **Dark**, and **True Black (OLED)** modes. |
-| **Advanced Utils**     | Extensions for `Iterable` (groupBy, sortedBy, distinctBy), `num`, and `DateTime`.                                |
 
 ---
 
@@ -47,6 +47,7 @@ lib/
     │   ├── data/             # Datasources, DTOs, Repository implementations
     │   ├── domain/           # Entities, Repository interfaces, Use Cases
     │   └── presentation/     # AuthProvider, AuthController, Screens
+    ├── face_recognition/     # AI Modules (ML Kit, TFLite, Custom Camera logic)
     ├── home/
     │   └── presentation/     # HomeScreen and related widgets
     └── settings/
@@ -57,15 +58,27 @@ lib/
 
 ## 🛠️ Technical Ecosystem
 
-| Category         | Recommended Libraries                                             |
-| ---------------- | ----------------------------------------------------------------- |
-| **State**        | `flutter_riverpod` · `riverpod_annotation` · `riverpod_generator` |
-| **Routing**      | `go_router` · `go_router_builder`                                 |
-| **Networking**   | `dio`                                                             |
-| **Storage**      | `flutter_secure_storage` · `shared_preferences`                   |
-| **Localization** | `slang` · `slang_flutter`                                         |
-| **Theming**      | `flex_color_scheme` · `google_fonts`                              |
-| **Persistence**  | `freezed` · `json_serializable`                                   |
+| Category           | Recommended Libraries                                               |
+| ------------------ | ------------------------------------------------------------------- |
+| **State**          | `flutter_riverpod` · `riverpod_annotation` · `riverpod_generator`   |
+| **AI / ML**        | `google_mlkit_face_detection` · `tflite_flutter`                    |
+| **Routing**        | `go_router` · `go_router_builder`                                   |
+| **Networking**     | `dio`                                                               |
+| **Storage**        | `flutter_secure_storage` · `shared_preferences`                     |
+| **Localization**   | `slang` · `slang_flutter`                                           |
+| **Theming**        | `flex_color_scheme` · `google_fonts`                                |
+| **Persistence**    | `freezed` · `json_serializable`                                     |
+
+---
+
+## 🎭 Face Recognition Implementation
+
+The face recognition module uses a hybrid approach for efficiency and security:
+
+1.  **Face Detection**: Powered by `google_mlkit_face_detection` for high-speed, on-device face tracking.
+2.  **Embedding Extraction**: Uses a custom **MobileFaceNet** TFLite model to generate a 192-dimensional vector (embedding) of the detected face.
+3.  **Cross-Platform Parity**: Optimized camera streams using `NV21` for Android and `BGRA8888` for iOS to ensure stable frame processing.
+4.  **Backend Integration**: Embeddings are sent to a persistent repository (PostgreSQL pgvector) for similarity comparison.
 
 ---
 
